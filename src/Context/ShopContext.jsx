@@ -9,10 +9,28 @@ const getDefaultCart=()=>{
     }
     return cart;
 }
+const getDefaultWish=()=>{
+    let cart={};
+    for(let i=0;i<all_product.length+1;i++){
+        cart[i]=0;
+    }
+    return cart;
+}
 
 export const ShopContextProvider=(props)=>{
    
+    const [count,setCount]=useState(0)
     const [cartItems,setCartItems]=useState(getDefaultCart());
+    const [wishItems,setWishItems]=useState(getDefaultWish());
+    const addWishCart=(itemId)=>{
+        setWishItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+        
+        
+    }
+    const subWishCart=(itemId)=>{
+        setWishItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+       
+    }
     
     const addCart=(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
@@ -66,7 +84,7 @@ export const ShopContextProvider=(props)=>{
         }
     },[setThemeMode])
 
-     const contextValue={themeMode,all_product,darkMode,lightMode,addCart,subCart,getTotalCartAmount}
+     const contextValue={themeMode,all_product,darkMode,lightMode,addCart,subCart,getTotalCartAmount,cartItems,wishItems,subWishCart,addWishCart}
      return (
         <ShopContext.Provider value={contextValue}>
             {props.children}

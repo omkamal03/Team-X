@@ -5,7 +5,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { ShopContext } from '../../Context/ShopContext';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 
 
 
@@ -101,14 +101,19 @@ function Navbar() {
            </ul>
            <div className='flex items-center gap-6'>
               <div>
-                  <FaShoppingCart className='dark:text-white relative text-black text-3xl cursor-pointer hover:scale-110' />
+              <NavLink  to="/cart" onClick={scrollToTop}
+                                    className={({isActive}) =>
+                                        ` ${isActive ? " dark:text-cyan-500 " : ""}`
+                                        
+                                    }><FaShoppingCart className='dark:text-white relative text-black text-3xl cursor-pointer hover:scale-110' /></NavLink>    
                   
                </div>
            <BsThreeDotsVertical onClick={()=>setMenu(!menu)} className='dark:text-white text-black  text-3xl relative cursor-pointer hover:scale-110'/>
            <section className={`flex  flex-col  ${menu?"":"hidden"} absolute right-10 z-50 top-16 w-44 bg-slate-900 dark:bg-cyan-900  items-center gap-6 p-5`}>
-                   <button className=' text-white  text-lg font-medium hover:bg-cyan-500 w-full '>Login</button>
-                   <button className='text-white text-lg font-medium hover:bg-cyan-500 w-full'>Signup</button>
+                  <Link to="/login"> <button onClick={scrollToTop} className=' text-white  text-lg font-medium hover:bg-cyan-500 w-full '>Login</button></Link>
+                  <Link to="/signin"> <button  onClick={scrollToTop} className='text-white text-lg font-medium hover:bg-cyan-500 w-full'>Signup</button></Link>
                    <button onClick={changeMode} className='text-white text-lg font-medium hover:bg-cyan-500 w-full'>Enable {mode} mode</button>
+                   <NavLink onClick={scrollToTop} to="/wishlist"><button className='text-white text-lg font-medium hover:bg-cyan-500 w-full'>My Wishlist</button></NavLink>      
             </section>
             </div>
            

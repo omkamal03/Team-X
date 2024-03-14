@@ -3,10 +3,11 @@ import { ShopContext } from '../../Context/ShopContext'
 
 function ProductDisplay(props) {
     const {product}=props
-    const {addCart}=useContext(ShopContext)
+    const {addCart,addWishCart}=useContext(ShopContext)
   return (
+ <div>
     <div className='py-10 flex md:flex-row flex-col gap-12'>
-      <div className='flex w-full gap-4 md:w-1/2 '>
+      <div className='flex w-full gap-4 md:w-3/4 '>
         <div className='flex w-1/4 flex-col gap-2'>
             <img className='w-28 ' src={product.image} alt="" />
             <img className='w-28 ' src={product.image} alt="" />
@@ -45,11 +46,35 @@ function ProductDisplay(props) {
             </div>
         </div >
         <button onClick={()=>addCart(product.id)} className='bg-red-500 text-white  w-56 py-4 rounded-md hover:font-bold md:mx-4'>ADD TO CART</button>
-        <button  className='bg-red-500 text-white my-4  w-56 py-4 rounded-md hover:font-bold'>ADD WHISHLIST</button>
-        <p className='mt-16 text-slate-700 font-medium dark:text-white'><span className='font-bold text-black dark:text-cyan-500'>Category:  </span> Women,T-Shirt,Crop Top</p>
+        <button onClick={()=>addWishCart(product.id)} className='bg-red-500 text-white my-4  w-56 py-4 rounded-md hover:font-bold'>ADD WHISHLIST</button>
+        <p className='mt-16 text-slate-700 font-medium dark:text-white'><span className='font-bold text-black dark:text-cyan-500'>Category:  </span> {product.category},T-Shirt,Crop Top</p>
         <p className='text-slate-700 font-medium dark:text-white'><span className='font-bold text-black dark:text-cyan-500'>Tags: </span>   Modern ,Latest</p>
-       
+         
       </div>
+      
+    </div>
+       <div className='my-10'>
+        <h3 className='dark:text-cyan-500 text-red-500 font-bold'>Review:</h3>
+         <p className=''>
+            
+         {product.review.map((e, i) => {
+        return (
+            <div key={i}>
+                <p className=' border border-slate-200 px-10 py-3  dark:text-white text-black md:my-3'>
+                    {e.r}
+                </p>
+            </div>
+           
+            );
+           
+       }
+         )
+       
+       }
+   
+</p>
+          
+       </div>
     </div>
   )
 }

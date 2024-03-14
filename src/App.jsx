@@ -12,6 +12,7 @@ import Footer from "./components/Footer/Footer.jsx"
 import mens_banner from  "./assets/banner_mens.png"
 import women_banner from  "./assets/banner_women.png"
 import kids_banner from  "./assets/banner_kids.png"
+import Wishlist from "./components/WishList/Wishlist.jsx"
 
 
 
@@ -32,8 +33,9 @@ function App() {
                     <Route path=":productId" element={<Product/>}/>
                  </Route>
                   <Route path="/cart" element={<Cart/>}/>
+                  <Route path="/wishlist" element={<Wishlist/>}/>
                   <Route path="/login" element={<Login/>}/>
-                  <Route path="/singin"  element={<Signup/>}/>
+                  <Route path="/signin"  element={<Signup/>}/>
              </Routes>
             <Footer/>
          </BrowserRouter>
