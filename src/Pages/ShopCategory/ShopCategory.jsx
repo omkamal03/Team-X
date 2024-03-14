@@ -15,7 +15,7 @@ function ShopCategory(props) {
            Sort by <img className='w-3 h-3 dark:bg-cyan-500' src="src/assets/dropdown_icon.png" alt="" />
          </div>
          </div>
-         <div className='my-5  px-8 md:pl-16 flex flex-wrap'>
+         <div className='my-5  px-8 md:pl-0 flex flex-wrap'>
             {all_product.map((item,i)=>{
               if(props.category===item.category){
                return <Items   key={i} id={item.id} name={item.name}  image={item.image} new_price={item.new_price} old_price={item.old_price}    />

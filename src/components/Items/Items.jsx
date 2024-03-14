@@ -6,7 +6,7 @@ function Items(props) {
       };
       return (
 
-        <div  className='mb-6   dark:bg-cyan-900 bg-blue-100 transition ease-in-out duration-100 -z-1 hover:scale-110 cursor-pointer px-5 hover:overflow-hidden w-96 md:w-72 md:px-5'>
+        <div  className='mb-6 md:ml-5  dark:bg-cyan-900 bg-blue-100 transition ease-in-out duration-100 -z-1 hover:scale-110 cursor-pointer px-5 hover:overflow-hidden w-96 md:w-72 md:px-5'>
           
           <Link to={`/product/${props.id}`}><img onClick={scrollToTop} className='pt-5 w-96 md:w-60 ' src={props.image} alt="" /></Link>  
             <p className='  text-sm font-serif py-3 font-medium dark:text-white'>{props.name}</p>
