@@ -84,7 +84,7 @@ export const ShopContextProvider=(props)=>{
         }
     },[setThemeMode])
 
-     const contextValue={themeMode,all_product,darkMode,lightMode,addCart,subCart,getTotalCartAmount,cartItems,wishItems,subWishCart,addWishCart}
+     const contextValue={themeMode,all_product,darkMode,lightMode,addCart,subCart,getTotalCartAmount,cartItems,wishItems,subWishCart,addWishCart,setWishItems}
      return (
         <ShopContext.Provider value={contextValue}>
             {props.children}

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ShopContext } from '../../Context/ShopContext'
+import { Link } from 'react-router-dom'
 
 function ProductDisplay(props) {
     const {product}=props
@@ -21,11 +22,11 @@ function ProductDisplay(props) {
       <div>
         <h1 className='text-3xl font-serif font-semibold text-slate-500 dark:text-cyan-500'>{product.name}</h1>
         <div className='flex py-5 gap-2'>
-            <img src="/assets/star_icon.png" alt="" />
-            <img src="/assets/star_icon.png" alt="" />
-            <img src="/assets/star_icon.png" alt="" />
-            <img src="/assets/star_icon.png" alt="" />
-            <img src="/assets/star_dull_icon.png" alt="" />
+            <img src="\src\assets\star_icon.png" alt="" />
+            <img src="\src\assets\star_icon.png" alt="" />
+            <img src="\src\assets\star_icon.png" alt="" />
+            <img src="\src\assets\star_icon.png" alt="" />
+            <img src="\src\assets\star_dull_icon.png" alt="" />
             <p>(122)</p>
         </div>
         <div className='flex text-center gap-5 py-5'>
@@ -45,8 +46,8 @@ function ProductDisplay(props) {
                 <div className='border border-slate-500 font-medium hover:bg-slate-200 bg-slate-100 cursor-pointer py-3 px-4 hover:font-bold'>XXL</div>
             </div>
         </div >
-        <button onClick={()=>addCart(product.id)} className='bg-red-500 text-white  w-56 py-4 rounded-md hover:font-bold md:mx-4'>ADD TO CART</button>
-        <button onClick={()=>addWishCart(product.id)} className='bg-red-500 text-white my-4  w-56 py-4 rounded-md hover:font-bold'>ADD WHISHLIST</button>
+      <Link to="/cart" ><button onClick={()=>addCart(product.id)} className='bg-red-500 text-white  w-56 py-4 rounded-md hover:font-bold md:mx-4'>ADD TO CART</button></Link>  
+      <Link to="/wishlist" > <button onClick={()=>addWishCart(product.id)} className='bg-red-500 text-white my-4  w-56 py-4 rounded-md hover:font-bold'>ADD WHISHLIST</button></Link> 
         <p className='mt-16 text-slate-700 font-medium dark:text-white'><span className='font-bold text-black dark:text-cyan-500'>Category:  </span> {product.category},T-Shirt,Crop Top</p>
         <p className='text-slate-700 font-medium dark:text-white'><span className='font-bold text-black dark:text-cyan-500'>Tags: </span>   Modern ,Latest</p>
          

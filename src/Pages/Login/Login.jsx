@@ -5,7 +5,7 @@ function Login() {
     <div>
           <div>
           <form className='my-44 md:mx-96 mx-20 px-5 md:px-20 bg-cyan-100 dark:bg-slate-800 pt-10 pb-24 '> 
-        <h2 className='font-sans text-2xl md:px-44 px-2 underline font-bold my-6 dark:text-cyan-500'>SHOPPER</h2>
+        <h2 className='font-sans text-2xl md:px-44 px-2 underline font-bold my-6 dark:text-cyan-500'>DROP</h2>
         <div className='flex flex-col gap-4'>
             <input className=' h-14 border border-slate-500 rounded-lg px-5 py-5' type="text" placeholder='Name' />
             <input className=' h-14 border border-slate-500 rounded-lg px-5 py-5' type=" email" placeholder='E-Mail Address'/>

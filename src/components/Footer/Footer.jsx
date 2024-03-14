@@ -7,7 +7,7 @@ function Footer() {
         <div className='w-full '>
         <div className='  flex items-center pb-4  px-24 md:px-64'>
            <IoLogoBitbucket className=' text-black text-3xl dark:text-cyan-500 cursor-pointer' />
-           <h3 className='font-bold text-3xl px-5 md:px-5 dark:text-cyan-500 '>LOGO</h3>
+           <h3 className='font-bold text-3xl px-5 md:px-5 dark:text-cyan-500 '>DROP</h3>
         </div>
         <ul className='md:px-44 px-36 flex flex-col md:flex-row my-4 gap-3  font-serif text-slate-500'>
             <li className='w-20   cursor-pointer hover:font-semibold dark:text-white'>Company</li>

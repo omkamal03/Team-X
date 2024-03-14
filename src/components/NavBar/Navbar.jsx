@@ -35,7 +35,7 @@ function Navbar() {
          <GiHamburgerMenu onClick={() => setIsOpen(!isOpen)} className='dark:text-white text-black text-3xl md:hidden'/>
            <section className='flex gap-3 items-center'>
            <IoLogoBitbucket className='text-3xl text-black dark:text-cyan-500 cursor-pointer' />
-            <h2 className='dark:text-white text-black font-bold font-serif text-4xl'>Logo</h2>
+            <h2 className='dark:text-white text-black font-bold font-serif text-4xl'>DROP</h2>
           
            </section>
            <div className={`md:hidden fixed  transition-transform  duration-75 ease-in-out h-full w-screen top-0 right-0 ${isOpen?"translet-x-full  bg-black/50  backdrop-blur-sm":"-translate-x-full"}`}>
